@@ -1,0 +1,14 @@
+body{
+    min-height: 100vh;
+}
+#app{
+    min-height: 100vh;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: blueviolet;
+}
+.login-form{
+    min-width: 30vw;
+}
