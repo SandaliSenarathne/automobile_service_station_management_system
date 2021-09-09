@@ -4,7 +4,6 @@
         <div class="card">
         <div class="card-body" align="center">
             <h1>Create Account</h1>
-            <br>
             <!--Start SignUp Form-->
             <form class="login-form">
                 <div class="form-group">
@@ -30,7 +29,7 @@
                 </div>
             </form>
             <button type="button" class="btn btn-primary btn-lg">Sign Up</button>
-            <br><br>
+            <br>
             <p>Already have an account? <button type="button" onClick="loadLogin()" class="btn btn-outline-dark"><b>Login</b></button></p>
             <!--End SignUp Form-->
         </div>

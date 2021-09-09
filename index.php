@@ -1,4 +1,7 @@
-<?php  require_once("db.php");?>
+<?php  
+require_once("db.php");
+require_once("backend/loginSessionChecker.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +15,13 @@
 </head>
 <body>
     <div class="container-fluid" id="app">
-        <?php  require_once("pages/login.php");?>
+        <?php  
+        if(hasLoggedIn()){
+            require_once("pages/welcome.php");
+        }else{
+            require_once("pages/login.php");
+        }
+        ?>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
