@@ -1,4 +1,4 @@
-<div>
+<div class="content">
     <div class="row">
     <div class="col-sm-12">
         <div class="card">
@@ -53,7 +53,7 @@
                     
                 }
             };
-            xhttp.open('GET', "backend/loginChecker.php?email="+str1+"&password="+str2, true);
+            xhttp.open('GET', "backend/login.php?email="+str1+"&password="+str2, true);
             xhttp.send();
         }
     }

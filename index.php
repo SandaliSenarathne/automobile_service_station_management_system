@@ -1,6 +1,5 @@
 <?php  
-require_once("db.php");
-require_once("backend/loginSessionChecker.php");
+require_once("backend/controllers/auth.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
