@@ -52,7 +52,7 @@
                     if (this.readyState == 4 && this.status == 200) {
                     
                         if(this.responseText == "Login Success"){
-                            loadWelcome();
+                            document.getElementById("errorMessage").innerHTML = this.responseText;
                         }else{
                             document.getElementById("errorMessage").innerHTML = this.responseText;
                         }

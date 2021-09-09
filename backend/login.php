@@ -1,5 +1,4 @@
 <?php 
-	include("controllers/auth.php");
 	include("../db.php");
 	
 	$email = htmlspecialchars($_GET['email']);
