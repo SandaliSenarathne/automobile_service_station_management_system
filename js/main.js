@@ -11,18 +11,23 @@ function ajaxCommon(phpFileName, outPutStage){
    
 }
 
-
-function loadLogin(){
-    ajaxCommon("pages/login.php","app");
+function hasLoggedIn() {
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            
+            if(this.responseText == "true"){
+                return true;
+            }else if(this.responseText == "true"){
+                return false;
+            }
+                
+        }
+    };
+    xhttp.open('GET', "backend/hasLoggedIn.php", true);
+    xhttp.send();
 }
 
-function loadSignUp(){
-    ajaxCommon("pages/signup.php","app");
-}
-
-function loadWelcome(){
-    ajaxCommon("pages/welcome.php","app");
-}
 
 
 
