@@ -1,0 +1,19 @@
+html {
+    scroll-behavior: smooth;
+}
+#app{
+    min-height: 100vh;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login-form{
+    min-width: 30vw;
+}
+#home{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
