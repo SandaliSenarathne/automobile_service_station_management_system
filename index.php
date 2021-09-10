@@ -3,7 +3,6 @@
 <head>
     <title>Dhashish Auto Spa</title>
     <?php include("importStyles.php"); ?>
-    <link href="https://fonts.googleapis.com/css2?family=Kelly+Slab&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
@@ -32,7 +31,7 @@
     </header>
 
     <!-- welcome -->
-    <div class="container-fluid" id="home" style="background-image: url('images/mask.jpg');background-size: cover;">
+    <div class="container-fluid" id="home">
         <div class="row align-items-center justify-content-center text-center">
             <div class="col-lg-8 align-self-end">
                 <h1 class="text-white font-weight-bold">Welcome to Dhashish Auto Spa!</h1>

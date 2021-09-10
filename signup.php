@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Dhashish Auto Spa</title>
+    <title>Sign Up</title>
     <?php include("importStyles.php"); ?>
 </head>
 <body>
-    <div class="container-fluid" id="app">
+    <div class="container-fluid" id="signup">
         <div class="row">
         <div class="col-sm-12">
             <div class="card">
