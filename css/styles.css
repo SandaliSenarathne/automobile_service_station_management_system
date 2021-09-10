@@ -21,7 +21,7 @@ html {
     align-items: center;
     justify-content: center;
 }
-#categories{
+#categories, #requestService, #addCategory, #addItem{
     min-height: 100vh;
     padding: 25px;
     display: flex;

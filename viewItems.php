@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Categories</title>
+    <title>Items</title>
     <?php include("importStyles.php"); ?>
 </head>
 <body>
