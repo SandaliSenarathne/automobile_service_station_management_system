@@ -35,7 +35,8 @@
                         <input type="password" class="form-control" id="reEnterPassword" placeholder="Re-enter Password">
                     </div>
                 </form>
-                <button type="button" class="btn btn-primary btn-lg">Sign Up</button>
+                <h5 id="errorMessage" style="color: red"></h5><br>
+                <button type="button" class="btn btn-primary btn-lg" onClick="signUp()">Sign Up</button>
                 <br>
                 <p>Already have an account? <button type="button" onClick="location.href='login.php'" class="btn btn-outline-dark btn-sm"><b>Login</b></button></p>
                 <!--End SignUp Form-->
@@ -48,23 +49,33 @@
     <?php include("importScripts.php"); ?>
 
     <script type="text/javascript" >
-        function checkUser() {
-            document.getElementById("errorMessage").innerHTML = "<div class='spinner-border text-primary' role='status'><span class='sr-only'>Loading...</span></div>";
+        function signUp() {
+            // document.getElementById("errorMessage").innerHTML = "<div class='spinner-border text-primary' role='status'><span class='sr-only'>Loading...</span></div>";
             var xhttp;
-            var str1 = document.getElementById("email").value;
-            var str2 = document.getElementById("password").value;
+            var fname = document.getElementById("firstName").value;
+            var lname = document.getElementById("lastName").value;
+            var phone = document.getElementById("phone").value;
+            var address = document.getElementById("address").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var rePassword = document.getElementById("reEnterPassword").value;
             
-            if ((str1=="" || str2=="")){
-                document.getElementById("errorMessage").innerHTML = "Please fill all the fields";
-            }else if (!isValidEmail(str1)){
+            if (fname=="" || lname=="" || phone=="" || address=="" || email=="" || password=="" || rePassword==""){
+                document.getElementById("errorMessage").innerHTML = "Please fill all the fields.";
+            }else if(phone.length != 10){
+                document.getElementById("errorMessage").innerHTML = "Phone number should contain 10 digits.";
+            }else if (!isValidEmail(email)){
                 document.getElementById("errorMessage").innerHTML = "Invalid e-mail address";
+            }else if(password != rePassword){
+                document.getElementById("errorMessage").innerHTML = "Passwords does not match.";
             }else {
             
                 xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
                     
-                        if(this.responseText == "Login Success"){
+                        if(this.responseText == "Signup
+                         Success"){
                             loadWelcome();
                         }else{
                             document.getElementById("errorMessage").innerHTML = this.responseText;
@@ -72,7 +83,7 @@
                         
                     }
                 };
-                xhttp.open('GET', "backend/login.php?email="+str1+"&password="+str2, true);
+                xhttp.open('GET', "backend/signup.php?fname="+fname+"&lname="+lname+"&phone="+phone+"&address="+address+"&email="+email+"&password="+password+"&rePassword="+rePassword, true);
                 xhttp.send();
             }
         }
