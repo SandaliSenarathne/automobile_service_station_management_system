@@ -24,7 +24,7 @@
                 <h5 id="errorMessage" style="color: red"></h5><br>
                 <button type="button" class="btn btn-primary btn-lg" onClick="checkUser()">Login</button>
                 <br><br>
-                <p>Don't have an account? <button type="button" onClick="location.href='signup.php'" class="btn btn-outline-dark"><b>Create Account</b></button></p>
+                <p>Don't have an account? <button type="button" onClick="location.href='signup.php'" class="btn btn-outline-dark btn-sm"><b>Create Account</b></button></p>
                 <!--End Login Form-->
             </div>
             </div>

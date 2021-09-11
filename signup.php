@@ -37,7 +37,7 @@
                 </form>
                 <button type="button" class="btn btn-primary btn-lg">Sign Up</button>
                 <br>
-                <p>Already have an account? <button type="button" onClick="location.href='login.php'" class="btn btn-outline-dark"><b>Login</b></button></p>
+                <p>Already have an account? <button type="button" onClick="location.href='login.php'" class="btn btn-outline-dark btn-sm"><b>Login</b></button></p>
                 <!--End SignUp Form-->
             </div>
             </div>
