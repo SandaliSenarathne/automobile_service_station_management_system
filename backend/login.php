@@ -8,7 +8,7 @@
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
     }
-	$sql = "SELECT COUNT(*)
+	$sql = "SELECT COUNT(*), id
 			FROM user
 			WHERE email = '$email' AND pwd='$hashedPassword'";
 
@@ -18,6 +18,7 @@
 	if ($row['COUNT(*)']<1){
 		echo "Invalid Credentials";
 	}else if ($row['COUNT(*)']==1){
+		$_SESSION['user']['user_id']= $row['id'];
 		$_SESSION['user']['email']= $email;
 		$_SESSION['user']['status']= 1;
 		$_SESSION['user']["login_time_stamp"] = time();

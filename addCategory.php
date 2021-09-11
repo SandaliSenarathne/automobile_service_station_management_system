@@ -17,10 +17,10 @@
                     </div>
                     <div class="form-group text-left">
                         <label for="thumbnail">Please upload thumbnail for this category</label>
-                        <input  type="file" class="form-control" name="thumbnail" required>
+                        <input  type="file" class="form-control" id="thumbnail" required>
                     </div>
                 </form>
-                <button type="button" class="btn btn-primary btn-lg">Submit Request</button>
+                <button type="button" class="btn btn-primary btn-lg" onClick="addCategory()">Submit Request</button>
             </div>
             </div>
         </div>
