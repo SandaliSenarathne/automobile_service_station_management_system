@@ -1,14 +1,34 @@
-//ajax common getter
-function ajaxCommon(phpFileName, outPutStage){
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-        if (this.readyState === 4 && this.status == 200) {
-            document.getElementById(outPutStage).innerHTML  =  this.responseText;
-        }
-    };
-    xmlhttp.open("GET", phpFileName, true);
-    xmlhttp.send();
-   
+function addCategory() {
+    // document.getElementById("errorMessage").innerHTML = "<div class='spinner-border text-primary' role='status'><span class='sr-only'>Loading...</span></div>";
+    var xhttp;
+    var categoryName = document.getElementById("firstName").value;
+    // var thumbnail = document.getElementById("lastName").value;
+    
+    // if (fname=="" || lname=="" || phone=="" || address=="" || email=="" || password=="" || rePassword==""){
+    //     document.getElementById("errorMessage").innerHTML = "Please fill all the fields.";
+    // }else if(phone.length != 10){
+    //     document.getElementById("errorMessage").innerHTML = "Phone number should contain 10 digits.";
+    // }else if (!isValidEmail(email)){
+    //     document.getElementById("errorMessage").innerHTML = "Invalid e-mail address";
+    // }else if(password != rePassword){
+    //     document.getElementById("errorMessage").innerHTML = "Passwords does not match.";
+    // }else {
+    
+    //     xhttp = new XMLHttpRequest();
+    //     xhttp.onreadystatechange = function() {
+    //         if (this.readyState == 4 && this.status == 200) {
+            
+    //             if(this.responseText == "Signup Success"){
+    //                 document.getElementById("errorMessage").innerHTML = this.responseText;
+    //             }else{
+    //                 document.getElementById("errorMessage").innerHTML = this.responseText;
+    //             }
+                
+    //         }
+    //     };
+    //     xhttp.open('GET', "backend/signup.php?fname="+fname+"&lname="+lname+"&phone="+phone+"&address="+address+"&email="+email+"&password="+password+"&rePassword="+rePassword, true);
+    //     xhttp.send();
+    // }
 }
 
 function hasLoggedIn() {
@@ -26,6 +46,14 @@ function hasLoggedIn() {
     };
     xhttp.open('GET', "backend/hasLoggedIn.php", true);
     xhttp.send();
+}
+
+function isValidEmail(mail) {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)){
+        return true;
+    }else{
+        return false;
+    }
 }
 
 function login() {
@@ -57,14 +85,43 @@ function login() {
     }
 }
 
-function isValidEmail(mail) {
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)){
-        return true;
-    }else{
-        return false;
+function signUp() {
+    // document.getElementById("errorMessage").innerHTML = "<div class='spinner-border text-primary' role='status'><span class='sr-only'>Loading...</span></div>";
+    var xhttp;
+    var fname = document.getElementById("firstName").value;
+    var lname = document.getElementById("lastName").value;
+    var phone = document.getElementById("phone").value;
+    var address = document.getElementById("address").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    var rePassword = document.getElementById("reEnterPassword").value;
+    
+    if (fname=="" || lname=="" || phone=="" || address=="" || email=="" || password=="" || rePassword==""){
+        document.getElementById("errorMessage").innerHTML = "Please fill all the fields.";
+    }else if(phone.length != 10){
+        document.getElementById("errorMessage").innerHTML = "Phone number should contain 10 digits.";
+    }else if (!isValidEmail(email)){
+        document.getElementById("errorMessage").innerHTML = "Invalid e-mail address";
+    }else if(password != rePassword){
+        document.getElementById("errorMessage").innerHTML = "Passwords does not match.";
+    }else {
+    
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+            
+                if(this.responseText == "Signup Success"){
+                    document.getElementById("errorMessage").innerHTML = this.responseText;
+                }else{
+                    document.getElementById("errorMessage").innerHTML = this.responseText;
+                }
+                
+            }
+        };
+        xhttp.open('GET', "backend/signup.php?fname="+fname+"&lname="+lname+"&phone="+phone+"&address="+address+"&email="+email+"&password="+password+"&rePassword="+rePassword, true);
+        xhttp.send();
     }
 }
-
 
 
 
