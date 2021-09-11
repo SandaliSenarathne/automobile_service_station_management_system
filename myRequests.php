@@ -34,7 +34,7 @@
                     <td>05.10.2021</td>
                     <td>14:30</td>
                     <td>2038-01-19 03:14:07</td>
-                    <td><button type="button" class="btn btn-sm btn-outline-primary" onClick="#">Pending</button></td>
+                    <td><span class="badge badge-primary" onClick="#">Pending</span></td>
                     <td><button type="button" class="btn btn-sm btn-outline-primary" onClick="#">Edit</button></td>
                     <td><button type="button" class="btn btn-sm btn-outline-danger" onClick="#">Delete</button></td>
                 </tr>
@@ -48,7 +48,7 @@
                     <td>05.10.2021</td>
                     <td>14:30</td>
                     <td>2038-01-19 03:14:07</td>
-                    <td><button type="button" class="btn btn-sm btn-outline-success" onClick="#">Accepted</button></td>
+                    <td><span class="badge badge-success" onClick="#">Accepted</span></td>
                     <td></td>
                     <td><button type="button" class="btn btn-sm btn-outline-danger" onClick="#">Delete</button></td>
                 </tr>
@@ -62,7 +62,7 @@
                     <td>05.10.2021</td>
                     <td>14:30</td>
                     <td>2038-01-19 03:14:07</td>
-                    <td><button type="button" class="btn btn-sm btn-outline-danger" onClick="#">Rejected</button></td>
+                    <td><span class="badge badge-danger" onClick="#">Rejected</span></td>
                     <td></td>
                     <td><button type="button" class="btn btn-sm btn-outline-danger" onClick="#">Delete</button></td>
                 </tr>
@@ -76,7 +76,7 @@
                     <td>05.10.2021</td>
                     <td>14:30</td>
                     <td>2038-01-19 03:14:07</td>
-                    <td><button type="button" class="btn btn-sm btn-outline-primary" onClick="#">Pending</button></td>
+                    <td><span class="badge badge-primary" onClick="#">Pending</span></td>
                     <td><button type="button" class="btn btn-sm btn-outline-primary" onClick="#">Edit</button></td>
                     <td><button type="button" class="btn btn-sm btn-outline-danger" onClick="#">Delete</button></td>
                 </tr>
@@ -90,7 +90,7 @@
                     <td>05.10.2021</td>
                     <td>14:30</td>
                     <td>2038-01-19 03:14:07</td>
-                    <td><button type="button" class="btn btn-sm btn-outline-success" onClick="#">Accepted</button></td>
+                    <td><span class="badge badge-success" onClick="#">Accepted</span></td>
                     <td></td>
                     <td><button type="button" class="btn btn-sm btn-outline-danger" onClick="#">Delete</button></td>
                 </tr>
