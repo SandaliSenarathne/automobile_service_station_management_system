@@ -30,7 +30,7 @@ session_start();
                         }
                     
                     ?></p>
-                    <input type="submit" value="Upload Image" name="submit">
+                    <input type="submit" class="btn btn-primary btn-lg" value="Add Category" name="submit">
                     <!-- <button type="submit"  name="submit" class="btn btn-primary btn-lg">Submit Request</button> -->
                 </form>
                 
