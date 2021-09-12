@@ -1,3 +1,8 @@
+<?php
+    require_once("db.php");
+    $sql = "SELECT * FROM category";
+    $result = $conn->query($sql);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,108 +10,27 @@
     <?php include("importStyles.php"); ?>
 </head>
 <body>
-    <div class="container-fluid" id="categories">
-    <div class="row">
-        <div class="col-md-12">
-            <h2 class="fadeInDown text-center">PRODUCT CATEGORIES</h1>
-                <div class="row fadeInDown mt-5">        
-                    <div class="col-lg-3 col-md-3 col-sm-12 my-1">
-                        <div class="card card-margin">
-                            <div class="bg-image hover-overlay ripple" data-ripple-color="light">
-                                <img
-                                    src="images/bg.jpg"
-                                    class="img-fluid center-cropped"
-                                    style="height:20vh; object-fit: cover; object-position: center; width:100%;"
-                                />
-                            </div>
-                            <div class="card-body" style="height:150px;">
-                                <h5 class="card-title text-center" >Wind Sreen</h5>
-                                <a href="#" class="btn btn-outline-primary" style="position:absolute; bottom:15px; left:15px; right:15px;">View Items</a>
-                            </div>
+      
+    <h2 class="fadeInDown text-center" style="margin-bottom:25px;margin-top:25px">PRODUCT CATEGORIES</h1>
+    <div class="row" style="margin:20px">
+        <?php
+            if($result->num_rows > 0){
+                while($row = $result->fetch_assoc()){
+                    ?>
+                        <div class="col-sm-4">
+                                <div class="card my-1" style="width: 25rem;">
+                                    <img  class="card-img-top" src="<?php echo($row['thumbnail']) ?>" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class='card-title text-center'><?php echo($row['name']) ?></h5>
+                                        <a href="#" class="btn btn-outline-primary" style="width:100%">View Items</a>
+                                    </div>
+                                </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-12 my-1">
-                        <div class="card card-margin">
-                            <div class="bg-image hover-overlay ripple" data-ripple-color="light">
-                                <img
-                                    src="images/bg.jpg"
-                                    class="img-fluid center-cropped"
-                                    style="height:20vh; object-fit: cover; object-position: center; width:100%;"
-                                />
-                            </div>
-                            <div class="card-body" style="height:150px;">
-                                <h5 class="card-title text-center" >Wheels</h5>
-                                <a href="#" class="btn btn-outline-primary" style="position:absolute; bottom:15px; left:15px; right:15px;">View Items</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-12 my-1">
-                        <div class="card card-margin">
-                            <div class="bg-image hover-overlay ripple" data-ripple-color="light">
-                                <img
-                                    src="images/bg.jpg"
-                                    class="img-fluid center-cropped"
-                                    style="height:20vh; object-fit: cover; object-position: center; width:100%;"
-                                />
-                            </div>
-                            <div class="card-body" style="height:150px;">
-                                <h5 class="card-title text-center" >Tayers</h5>
-                                <a href="#" class="btn btn-outline-primary" style="position:absolute; bottom:15px; left:15px; right:15px;">View Items</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-12 my-1">
-                        <div class="card card-margin">
-                            <div class="bg-image hover-overlay ripple" data-ripple-color="light">
-                                <img
-                                    src="images/bg.jpg"
-                                    class="img-fluid center-cropped"
-                                    style="height:20vh; object-fit: cover; object-position: center; width:100%;"
-                                />
-                            </div>
-                            <div class="card-body" style="height:150px;">
-                                <h5 class="card-title text-center" >Seats</h5>
-                                <a href="#" class="btn btn-outline-primary" style="position:absolute; bottom:15px; left:15px; right:15px;">View Items</a>
-                            </div>
-                        </div>
-                    </div> 
-                    <div class="col-lg-3 col-md-3 col-sm-12 my-1">
-                        <div class="card card-margin">
-                            <div class="bg-image hover-overlay ripple" data-ripple-color="light">
-                                <img
-                                    src="images/bg.jpg"
-                                    class="img-fluid center-cropped"
-                                    style="height:20vh; object-fit: cover; object-position: center; width:100%;"
-                                />
-                            </div>
-                            <div class="card-body" style="height:150px;">
-                                <h5 class="card-title text-center" >Tayers</h5>
-                                <a href="#" class="btn btn-outline-primary" style="position:absolute; bottom:15px; left:15px; right:15px;">View Items</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-12 my-1">
-                        <div class="card card-margin">
-                            <div class="bg-image hover-overlay ripple" data-ripple-color="light">
-                                <img
-                                    src="images/bg.jpg"
-                                    class="img-fluid center-cropped"
-                                    style="height:20vh; object-fit: cover; object-position: center; width:100%;"
-                                />
-                            </div>
-                            <div class="card-body" style="height:150px;">
-                                <h5 class="card-title text-center" >Seats</h5>
-                                <a href="#" class="btn btn-outline-primary" style="position:absolute; bottom:15px; left:15px; right:15px;">View Items</a>
-                            </div>
-                        </div>
-                    </div>  
-                </div>
-            </div>
-        </div>
+                    <?php
+                }
+            }
+        ?>
     </div>
-    </div>
-
     <?php include("importScripts.php"); ?>
-
 </body>
 </html>
