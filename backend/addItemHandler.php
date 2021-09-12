@@ -65,7 +65,7 @@ if ($uploadOk == 0) {
     $sql = "INSERT INTO item (id, category_id, name, description, thumbnail, price, stock) VALUES (NULL, '$category', '$itemName', '$description', '$thumbnail', '$price', '$qty');";
     if ($conn->query($sql) === TRUE) {
         echo "New record created successfully";
-        $_SESSION["err"] = "New item added successfully";
+        $_SESSION["success"] = "New item added successfully";
       } else {
         $_SESSION["err"] = "Error: " . $sql . "<br>" . $conn->error;  
         echo "Error: " . $sql . "<br>" . $conn->error;

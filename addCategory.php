@@ -23,10 +23,17 @@ session_start();
                         <label for="thumbnail">Please upload thumbnail for this category</label>
                         <input  type="file" class="form-control" name="thumbnail" id="thumbnail" required>
                     </div>
-                    <p><?php 
+                    <p style="color:red;"><?php 
                         if(isset($_SESSION['err'])){
                             echo $_SESSION['err'];
                             unset($_SESSION['err']);
+                        }
+                    
+                    ?></p>
+                    <p style="color:green;"><?php 
+                        if(isset($_SESSION['success'])){
+                            echo $_SESSION['success'];
+                            unset($_SESSION['success']);
                         }
                     
                     ?></p>

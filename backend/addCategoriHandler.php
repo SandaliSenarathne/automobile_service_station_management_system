@@ -61,7 +61,7 @@ if ($uploadOk == 0) {
     $sql = "INSERT INTO category (id, name, thumbnail) VALUES (NULL, '$name', '$url');";
     if ($conn->query($sql) === TRUE) {
         echo "New record created successfully";
-        $_SESSION["err"] = "New record created successfully";
+        $_SESSION["success"] = "New record created successfully";
       } else {
         $_SESSION["err"] = "Error: " . $sql . "<br>" . $conn->error;  
         echo "Error: " . $sql . "<br>" . $conn->error;
