@@ -1,8 +1,15 @@
+<?php
+    require_once("db.php");
+    $sql = "SELECT * FROM category";
+    $result = $conn->query($sql);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Add Item</title>
-    <?php include("importStyles.php"); ?>
+    <?php 
+        include("importStyles.php");
+    ?>
 </head>
 <body>
     <div class="container-fluid" id="addItem">
@@ -15,9 +22,15 @@
                     <div class="form-group text-left">
                         <label for="category">Please select the category</label>
                         <select class="custom-select" name="category">
-                            <option value="1">Wheels</option>
-                            <option value="2">Tayers</option>
-                            <option value="3">Seats</option>
+                        <?php
+                        if($result->num_rows > 0){
+                            while($row = $result->fetch_assoc()){
+                        ?>
+                            <option value="<?php echo($row['id']) ?>"><?php echo($row['name']) ?></option>
+                        <?php
+                            }
+                        }
+                        ?>
                         </select>
                     </div>
                     <div class="form-group">
