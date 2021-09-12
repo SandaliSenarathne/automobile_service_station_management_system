@@ -62,7 +62,7 @@ if ($uploadOk == 0) {
     $thumbnail = 'backend/'.$target_dir.$t.basename($_FILES["thumbnail"]["name"]);
     $price = $_POST['price'];
     $qty = $_POST['qty'];
-    $sql = "INSERT INTO item (id, category_id, name, description, thumbnail, price, stock) VALUES (NULL, '$category', '$itemName', '$description', '$thumbnail', '$price', '$qty'";
+    $sql = "INSERT INTO item (id, category_id, name, description, thumbnail, price, stock) VALUES (NULL, '$category', '$itemName', '$description', '$thumbnail', '$price', '$qty');";
     if ($conn->query($sql) === TRUE) {
         echo "New record created successfully";
         $_SESSION["err"] = "New item added successfully";
