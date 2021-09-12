@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require_once("db.php");
     $sql = "SELECT * FROM category";
     $result = $conn->query($sql);
@@ -40,7 +41,7 @@
                         <textarea class="form-control" name="description" placeholder="Description" rows="2"></textarea>
                     </div>
                     <div class="form-group text-left">
-                        <label for="thumbnail">Please upload thumbnail for this category</label>
+                        <label for="thumbnail">Please upload thumbnail for this item</label>
                         <input  type="file" class="form-control" name="thumbnail" required>
                     </div>
                     <div class="form-group">
@@ -49,10 +50,16 @@
                     <div class="form-group">
                         <input type="number" class="form-control" name="qty" placeholder="Available Quantity" required>
                     </div>
-                    <p><?php 
+                    <p style="color:red;"><?php 
                         if(isset($_SESSION['err'])){
                             echo $_SESSION['err'];
                             unset($_SESSION['err']);
+                        }
+                    ?></p>
+                    <p style="color:green;"><?php 
+                        if(isset($_SESSION['success'])){
+                            echo $_SESSION['success'];
+                            unset($_SESSION['success']);
                         }
                     ?></p>
                     <input type="submit" class="btn btn-primary btn-lg" value="Add Item" name="submit">
