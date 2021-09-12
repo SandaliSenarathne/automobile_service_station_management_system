@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,16 +15,25 @@
         <h1>Add Category</h1>
             <div class="card">
             <div class="card-body">
-                <form class="login-form">
+                <form class="login-form" action="backend/addCategoriHandler.php" method="post" enctype="multipart/form-data">
                     <div class="form-group">
-                        <input type="text" class="form-control" id="categoryName" placeholder="Category Name" required>
+                        <input type="text" class="form-control" name="categoryName" id="categoryName" placeholder="Category Name" required>
                     </div>
                     <div class="form-group text-left">
                         <label for="thumbnail">Please upload thumbnail for this category</label>
-                        <input  type="file" class="form-control" id="thumbnail" required>
+                        <input  type="file" class="form-control" name="thumbnail" id="thumbnail" required>
                     </div>
+                    <p><?php 
+                        if(isset($_SESSION['err'])){
+                            echo $_SESSION['err'];
+                            unset($_SESSION['err']);
+                        }
+                    
+                    ?></p>
+                    <input type="submit" value="Upload Image" name="submit">
+                    <!-- <button type="submit"  name="submit" class="btn btn-primary btn-lg">Submit Request</button> -->
                 </form>
-                <button type="button" class="btn btn-primary btn-lg" onClick="addCategory()">Submit Request</button>
+                
             </div>
             </div>
         </div>
