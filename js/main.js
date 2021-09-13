@@ -41,6 +41,7 @@ function login() {
             
                 if(this.responseText == "Login Success"){
                     document.getElementById("errorMessage").innerHTML = this.responseText;
+                    window.location.href = "index.php";
                 }else{
                     document.getElementById("errorMessage").innerHTML = this.responseText;
                 }
@@ -50,6 +51,63 @@ function login() {
         xhttp.open('GET', "backend/login.php?email="+str1+"&password="+str2, true);
         xhttp.send();
     }
+}
+
+function requestService(service_type){
+    // vehicleNumber
+    // vehicleBrand
+    // vehicleModel
+    // rdate
+    // rtime
+    // message
+    // Get data first
+    var vehicleNumber = document.getElementById("vehicleNumber").value;
+    var vehicleBrand = document.getElementById("vehicleBrand").value;
+    var vehicleModel = document.getElementById("vehicleModel").value;
+    var rdate = document.getElementById("rdate").value;
+    var rtime = document.getElementById("rtime").value;
+    var message = document.getElementById("message").value;
+    var err = document.getElementById("err");
+    // validate those fileds 
+
+    if(vehicleNumber == ""){
+        err.innerHTML = "Please Enter Your Vehicle Number";
+        return;
+    }
+
+    if(vehicleBrand == ""){
+        err.innerHTML = "Please Enter Your Vehicle Brand";
+        return;
+    }
+
+    if(vehicleModel == ""){
+        err.innerHTML = "Please Enter Your Vehicle Model";
+        return;
+    }
+
+    if(rdate == ""){
+        err.innerHTML = "Please Enter a Date";
+        return;
+    }
+
+    if(rtime == ""){
+        err.innerHTML = "Please Enter a Time";
+        return;
+    }
+
+   // handle request here
+   err.innerHTML = "";
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+            
+                err.innerHTML = this.responseText;
+                
+            }
+        };
+        xhttp.open('GET', "backend/addRequestHandler.php?vehicleNumber="+vehicleNumber+"&vehicleBrand="+vehicleBrand+"&vehicleModel="+vehicleModel+"&rdate="+rdate+"&rtime="+rtime+"&message="+message+"&service_type="+service_type, true);
+        xhttp.send();
+
 }
 
 function signUp() {

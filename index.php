@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,8 +22,20 @@
                 <a class="nav-item nav-link" href="#about">About Us</a>
                 <a class="nav-item nav-link" href="#services">Services</a>
                 <a class="nav-item nav-link mr-5" href="#contact">Contact Us</a>
-                <a class="nav-item nav-link" href="login.php">Login</a>
-                <a class="nav-item nav-link" href="signup.php">SignUp</a>
+                <?php
+                    //hide login and signup if logged in
+                    if(!isset($_SESSION['user']['email'])){
+                        ?>
+                         <a class="nav-item nav-link" href="login.php">Login</a>
+                        <a class="nav-item nav-link" href="signup.php">SignUp</a>
+                        <?php
+                    }else{
+                        ?>
+                        <a class="nav-item nav-link" href="logout.php">Logout</a>
+                        <?php
+                    }
+                ?>
+               
                 <!-- if(hasLoggedIn()){
                     <a class="nav-item nav-link" href="#">ProfilePic</a>
                 }else{
@@ -100,7 +116,7 @@
                                                 <p class="card-text">
                                                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum impedit sequi voluptates.
                                                 </p>
-                                                <a href="#" class="btn btn-primary" style="position:absolute; bottom:15px; left:15px; right:15px;">Request</a>
+                                                <a href="requestService.php?id=1" class="btn btn-primary" style="position:absolute; bottom:15px; left:15px; right:15px;">Request</a>
                                             </div>
                                         </div>
                                     </div>
@@ -118,7 +134,7 @@
                                                 <p class="card-text">
                                                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum impedit sequi voluptates.
                                                 </p>
-                                                <a href="#" class="btn btn-primary" style="position:absolute; bottom:15px; left:15px; right:15px;">Request</a>
+                                                <a href="requestService.php?id=2" class="btn btn-primary" style="position:absolute; bottom:15px; left:15px; right:15px;">Request</a>
                                             </div>
                                         </div>
                                     </div>
@@ -136,7 +152,7 @@
                                                 <p class="card-text">
                                                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum impedit sequi voluptates.
                                                 </p>
-                                                <a href="#" class="btn btn-primary" style="position:absolute; bottom:15px; left:15px; right:15px;">Request</a>
+                                                <a href="requestService.php?id=3" class="btn btn-primary" style="position:absolute; bottom:15px; left:15px; right:15px;">Request</a>
                                             </div>
                                         </div>
                                     </div>
@@ -154,7 +170,7 @@
                                                 <p class="card-text">
                                                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum impedit sequi voluptates.
                                                 </p>
-                                                <a href="#" class="btn btn-primary" style="position:absolute; bottom:15px; left:15px; right:15px;">Request</a>
+                                                <a href="requestService.php?id=4" class="btn btn-primary" style="position:absolute; bottom:15px; left:15px; right:15px;">Request</a>
                                             </div>
                                         </div>
                                     </div>

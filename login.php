@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +25,15 @@
                         <input type="password" class="form-control" id="password" placeholder="Password">
                     </div>
                 </form>
-                <h5 id="errorMessage" style="color: red"></h5><br>
+                <h5 id="errorMessage" style="color: red">
+                    <?php 
+                        if(isset($_SESSION['err'])){
+                            echo $_SESSION['err'];
+                            unset($_SESSION['err']);
+                        }
+                    
+                    ?>
+                </h5><br>
                 <button type="button" class="btn btn-primary btn-lg" onClick="login()">Login</button>
                 <br><br>
                 <p>Don't have an account? <button type="button" onClick="location.href='signup.php'" class="btn btn-outline-dark btn-sm"><b>Create Account</b></button></p>
