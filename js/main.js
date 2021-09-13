@@ -41,6 +41,7 @@ function login() {
             
                 if(this.responseText == "Login Success"){
                     document.getElementById("errorMessage").innerHTML = this.responseText;
+                    window.location.href = "index.php";
                 }else{
                     document.getElementById("errorMessage").innerHTML = this.responseText;
                 }

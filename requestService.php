@@ -3,11 +3,13 @@
     //check get id is not defined
     //check is logged in with session
     if(!isset($_SESSION['user']['email'])){
-        echo('please log in');
+        $_SESSION['err'] = "Please login to request a Service";
+        header('location: login.php');
+        
     }else{
-        echo('log in done');
-    }
-?>
+        ?>
+
+        
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,3 +48,6 @@
 
 </body>
 </html>
+<?php
+    }
+?>
