@@ -100,7 +100,7 @@
                                                 <p class="card-text">
                                                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum impedit sequi voluptates.
                                                 </p>
-                                                <a href="#" class="btn btn-primary" style="position:absolute; bottom:15px; left:15px; right:15px;">Request</a>
+                                                <a href="requestService.php?id=1" class="btn btn-primary" style="position:absolute; bottom:15px; left:15px; right:15px;">Request</a>
                                             </div>
                                         </div>
                                     </div>
@@ -118,7 +118,7 @@
                                                 <p class="card-text">
                                                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum impedit sequi voluptates.
                                                 </p>
-                                                <a href="#" class="btn btn-primary" style="position:absolute; bottom:15px; left:15px; right:15px;">Request</a>
+                                                <a href="requestService.php?id=2" class="btn btn-primary" style="position:absolute; bottom:15px; left:15px; right:15px;">Request</a>
                                             </div>
                                         </div>
                                     </div>
@@ -136,7 +136,7 @@
                                                 <p class="card-text">
                                                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum impedit sequi voluptates.
                                                 </p>
-                                                <a href="#" class="btn btn-primary" style="position:absolute; bottom:15px; left:15px; right:15px;">Request</a>
+                                                <a href="requestService.php?id=3" class="btn btn-primary" style="position:absolute; bottom:15px; left:15px; right:15px;">Request</a>
                                             </div>
                                         </div>
                                     </div>
@@ -154,7 +154,7 @@
                                                 <p class="card-text">
                                                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum impedit sequi voluptates.
                                                 </p>
-                                                <a href="#" class="btn btn-primary" style="position:absolute; bottom:15px; left:15px; right:15px;">Request</a>
+                                                <a href="requestService.php?id=4" class="btn btn-primary" style="position:absolute; bottom:15px; left:15px; right:15px;">Request</a>
                                             </div>
                                         </div>
                                     </div>
