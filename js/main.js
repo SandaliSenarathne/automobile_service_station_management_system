@@ -68,6 +68,7 @@ function requestService(service_type){
     var rtime = document.getElementById("rtime").value;
     var message = document.getElementById("message").value;
     var err = document.getElementById("err");
+    var success = document.getElementById("success");
     // validate those fileds 
 
     if(vehicleNumber == ""){
@@ -101,7 +102,11 @@ function requestService(service_type){
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
             
-                err.innerHTML = this.responseText;
+                if(this.responseText == "New record created successfully"){
+                    success.innerHTML = this.responseText;
+                }else{
+                    err.innerHTML = this.responseText;
+                }
                 
             }
         };

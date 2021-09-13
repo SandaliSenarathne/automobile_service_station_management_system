@@ -58,6 +58,7 @@
                         <textarea class="form-control" id="message" placeholder="Message (optional)" max="1000" rows="2"></textarea>
                     </div>
                     <p id="err" style="color:red"></p>
+                    <p id="success" style="color:green"></p>
                 </form>
                 <button type="button" class="btn btn-primary btn-lg" onClick="requestService(<?php echo($id) ?>)">Submit Request</button>
             </div>
