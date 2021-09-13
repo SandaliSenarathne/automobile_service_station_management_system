@@ -45,6 +45,16 @@
                         <input type="text" class="form-control" id="vehicleModel" placeholder="Vehicle Model" required>
                     </div>
                     <div class="form-group">
+                        <p style="text-align:left">Select Date</p>
+                        <input type="date" class="form-control" id="vehicleModel" placeholder="Vehicle Model" required>
+                    </div>
+                    <div class="form-group">
+                        
+                        <p style="text-align:left">Select Time</p>
+                        <input type="time" class="form-control" id="vehicleModel" placeholder="Vehicle Model" required>
+                    </div>
+                    <div class="form-group">
+                        
                         <textarea class="form-control" id="message" placeholder="Message (optional)" max="1000" rows="2"></textarea>
                     </div>
                 </form>
