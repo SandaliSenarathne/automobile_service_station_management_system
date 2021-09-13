@@ -53,7 +53,7 @@ function login() {
     }
 }
 
-function requestService(){
+function requestService(service_type){
     // vehicleNumber
     // vehicleBrand
     // vehicleModel
@@ -105,7 +105,7 @@ function requestService(){
                 
             }
         };
-        xhttp.open('GET', "backend/addRequestHandler.php?vehicleNumber="+vehicleNumber+"&vehicleBrand="+vehicleBrand+"&vehicleModel="+vehicleModel+"&rdate="+rdate+"&rtime="+rtime+"&message="+message, true);
+        xhttp.open('GET', "backend/addRequestHandler.php?vehicleNumber="+vehicleNumber+"&vehicleBrand="+vehicleBrand+"&vehicleModel="+vehicleModel+"&rdate="+rdate+"&rtime="+rtime+"&message="+message+"&service_type="+service_type, true);
         xhttp.send();
 
 }

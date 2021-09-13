@@ -59,7 +59,7 @@
                     </div>
                     <p id="err" style="color:red"></p>
                 </form>
-                <button type="button" class="btn btn-primary btn-lg" onClick="requestService()">Submit Request</button>
+                <button type="button" class="btn btn-primary btn-lg" onClick="requestService(<?php echo($id) ?>)">Submit Request</button>
             </div>
             </div>
         </div>
