@@ -11,7 +11,7 @@
             <h2 class="fadeInDown text-center">My Service Requests</h1>
             <table class="table" id="itemsInCategory">
                 <tr>
-                    <th>Thumbnail</th>
+                    <th</th>
                     <th>Service Type</th>
                     <th>Vehicle Number</th>
                     <th>Brand</th>
@@ -34,7 +34,7 @@
                     <td>05.10.2021</td>
                     <td>14:30</td>
                     <td>2038-01-19 03:14:07</td>
-                    <td><span class="badge badge-primary" onClick="#">Pending</span></td>
+                    <td><span class="badge badge-primary">Pending</span></td>
                     <td><button type="button" class="btn btn-sm btn-outline-primary" onClick="#">Edit</button></td>
                     <td><button type="button" class="btn btn-sm btn-outline-danger" onClick="#">Delete</button></td>
                 </tr>
@@ -48,7 +48,7 @@
                     <td>05.10.2021</td>
                     <td>14:30</td>
                     <td>2038-01-19 03:14:07</td>
-                    <td><span class="badge badge-success" onClick="#">Accepted</span></td>
+                    <td><span class="badge badge-success">Accepted</span></td>
                     <td></td>
                     <td><button type="button" class="btn btn-sm btn-outline-danger" onClick="#">Delete</button></td>
                 </tr>
@@ -62,7 +62,7 @@
                     <td>05.10.2021</td>
                     <td>14:30</td>
                     <td>2038-01-19 03:14:07</td>
-                    <td><span class="badge badge-danger" onClick="#">Rejected</span></td>
+                    <td><span class="badge badge-danger">Rejected</span></td>
                     <td></td>
                     <td><button type="button" class="btn btn-sm btn-outline-danger" onClick="#">Delete</button></td>
                 </tr>
@@ -76,7 +76,7 @@
                     <td>05.10.2021</td>
                     <td>14:30</td>
                     <td>2038-01-19 03:14:07</td>
-                    <td><span class="badge badge-primary" onClick="#">Pending</span></td>
+                    <td><span class="badge badge-primary">Pending</span></td>
                     <td><button type="button" class="btn btn-sm btn-outline-primary" onClick="#">Edit</button></td>
                     <td><button type="button" class="btn btn-sm btn-outline-danger" onClick="#">Delete</button></td>
                 </tr>
@@ -90,7 +90,7 @@
                     <td>05.10.2021</td>
                     <td>14:30</td>
                     <td>2038-01-19 03:14:07</td>
-                    <td><span class="badge badge-success" onClick="#">Accepted</span></td>
+                    <td><span class="badge badge-warning">Completed</span></td>
                     <td></td>
                     <td><button type="button" class="btn btn-sm btn-outline-danger" onClick="#">Delete</button></td>
                 </tr>
