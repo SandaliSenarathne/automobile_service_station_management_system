@@ -7,6 +7,17 @@
         header('location: login.php');
         
     }else{
+            $id = $_GET['id'];
+            if($id == 1){
+                $type = "Normal Service";
+            }else if($id == 2){
+                $type = "Repair Service";
+            }else if($id == 3){
+                $type = "Breakdown Service";
+            }else{
+                $type = "Modification Service";
+            }
+
         ?>
 
         
@@ -20,7 +31,7 @@
     <div class="container-fluid" id="requestService">
         <div class="row">
         <div class="col-sm-12  text-center">
-        <h1>Request for a xyz service</h1>
+        <h1>Request for a <?php echo($type); ?> service</h1>
             <div class="card">
             <div class="card-body">
                 <form class="login-form">
