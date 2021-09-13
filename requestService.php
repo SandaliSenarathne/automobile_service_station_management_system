@@ -46,19 +46,20 @@
                     </div>
                     <div class="form-group">
                         <p style="text-align:left">Select Date</p>
-                        <input type="date" class="form-control" id="vehicleModel" placeholder="Vehicle Model" required>
+                        <input type="date" class="form-control" id="rdate" placeholder="Vehicle Model" required>
                     </div>
                     <div class="form-group">
                         
                         <p style="text-align:left">Select Time</p>
-                        <input type="time" class="form-control" id="vehicleModel" placeholder="Vehicle Model" required>
+                        <input type="time" class="form-control" id="rtime" placeholder="Vehicle Model" required>
                     </div>
                     <div class="form-group">
                         
                         <textarea class="form-control" id="message" placeholder="Message (optional)" max="1000" rows="2"></textarea>
                     </div>
+                    <p id="err" style="color:red"></p>
                 </form>
-                <button type="button" class="btn btn-primary btn-lg">Submit Request</button>
+                <button type="button" class="btn btn-primary btn-lg" onClick="requestService()">Submit Request</button>
             </div>
             </div>
         </div>
