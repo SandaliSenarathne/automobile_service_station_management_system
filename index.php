@@ -90,7 +90,7 @@
                                         <div class="card card-margin">
                                             <div class="bg-image hover-overlay ripple" data-ripple-color="light">
                                                 <img
-                                                    src="images/bg.jpg"
+                                                    src="images/normal_service.jpg"
                                                     class="img-fluid center-cropped"
                                                     style="height:20vh; object-fit: cover; object-position: center; width:100%;"
                                                 />
@@ -108,7 +108,7 @@
                                         <div class="card card-margin">
                                             <div class="bg-image hover-overlay ripple" data-ripple-color="light">
                                                 <img
-                                                    src="images/bg.jpg"
+                                                    src="images/repair_service.jpg"
                                                     class="img-fluid center-cropped"
                                                     style="height:20vh; object-fit: cover; object-position: center; width:100%;"
                                                 />
@@ -126,7 +126,7 @@
                                         <div class="card card-margin">
                                             <div class="bg-image hover-overlay ripple" data-ripple-color="light">
                                                 <img
-                                                    src="images/bg.jpg"
+                                                    src="images/breakdown_service.jpg"
                                                     class="img-fluid center-cropped"
                                                     style="height:20vh; object-fit: cover; object-position: center; width:100%;"
                                                 />
@@ -144,7 +144,7 @@
                                         <div class="card card-margin">
                                             <div class="bg-image hover-overlay ripple" data-ripple-color="light">
                                                 <img
-                                                    src="images/bg.jpg"
+                                                    src="images/modification_service.jpg"
                                                     class="img-fluid center-cropped"
                                                     style="height:20vh; object-fit: cover; object-position: center; width:100%;"
                                                 />
