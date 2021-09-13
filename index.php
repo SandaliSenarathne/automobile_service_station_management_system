@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,8 +22,20 @@
                 <a class="nav-item nav-link" href="#about">About Us</a>
                 <a class="nav-item nav-link" href="#services">Services</a>
                 <a class="nav-item nav-link mr-5" href="#contact">Contact Us</a>
-                <a class="nav-item nav-link" href="login.php">Login</a>
-                <a class="nav-item nav-link" href="signup.php">SignUp</a>
+                <?php
+                    //hide login and signup if logged in
+                    if(!isset($_SESSION['user']['email'])){
+                        ?>
+                         <a class="nav-item nav-link" href="login.php">Login</a>
+                        <a class="nav-item nav-link" href="signup.php">SignUp</a>
+                        <?php
+                    }else{
+                        ?>
+                        <a class="nav-item nav-link" href="logout.php">Logout</a>
+                        <?php
+                    }
+                ?>
+               
                 <!-- if(hasLoggedIn()){
                     <a class="nav-item nav-link" href="#">ProfilePic</a>
                 }else{
