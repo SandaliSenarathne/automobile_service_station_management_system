@@ -1,3 +1,7 @@
+<?php
+    require_once("../db.php");
+    $sql = "SELECT * FROM booking;";
+?>
 <!DOCTYPE html>
 <html>
 
@@ -63,25 +67,34 @@
                     <th>Requested On</th>
                     <th>Status</th>
                 </tr>
-                <tr>
-                    <td><img src="../images/bg.jpg" width="75px"></td>
-                    <td>Normal Service</td>
-                    <td>NC 8024</td>
-                    <td>Toyota</td>
-                    <td>Toyota Vitz</td>
-                    <td>Lorem ipsum dolor sit quos pariatur excepturi dignissimos veritatis </td>
-                    <td>05.10.2021</td>
-                    <td>14:30</td>
-                    <td>2038-01-19 03:14:07</td>
-                    <td>
-                        <select class="custom-select" name="status">
-                            <option class="text-primary" value="0">Pending</option>
-                            <option class="text-success" value="1">Accepted</option>
-                            <option class="text-danger" value="2">Rejected</option>
-                            <option class="text-warning" value="3">Completed</option>
-                        </select>
-                    </td>
-                </tr>
+                <?php
+                    $result = mysqli_query($conn, $sql);
+                    while($row = mysqli_fetch_assoc($result)){
+                        ?>
+                            <tr>
+                                <td><img src="../images/bg.jpg" width="75px"></td>
+                                <td>Normal Service</td>
+                                <td>NC 8024</td>
+                                <td>Toyota</td>
+                                <td>Toyota Vitz</td>
+                                <td>Lorem ipsum dolor sit quos pariatur excepturi dignissimos veritatis </td>
+                                <td>05.10.2021</td>
+                                <td>14:30</td>
+                                <td>2038-01-19 03:14:07</td>
+                                <td>
+                                    <select class="custom-select" name="status">
+                                        <option class="text-primary" value="0">Pending</option>
+                                        <option class="text-success" value="1">Accepted</option>
+                                        <option class="text-danger" value="2">Rejected</option>
+                                        <option class="text-warning" value="3">Completed</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        <?php
+                    }
+                    $conn->close();
+                ?>
+                
             </table>
         </div>
     </div>
