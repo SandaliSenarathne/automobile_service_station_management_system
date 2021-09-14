@@ -28,6 +28,9 @@
     <?php include("importStyles.php"); ?>
 </head>
 <body>
+    <?php
+        require_once("header.php");
+    ?>
     <div class="container-fluid" id="requestService">
         <div class="row">
         <div class="col-sm-12  text-center">
