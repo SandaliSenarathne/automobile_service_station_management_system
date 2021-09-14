@@ -42,7 +42,12 @@ function login() {
                 if(this.responseText == "Login Success"){
                     document.getElementById("errorMessage").innerHTML = this.responseText;
                     window.location.href = "index.php";
-                }else{
+                }
+                else if(this.responseText =='Admin'){
+                    document.getElementById("errorMessage").innerHTML = this.responseText;
+                    window.location.href = "admin/";
+                }
+                else{
                     document.getElementById("errorMessage").innerHTML = this.responseText;
                 }
                 
@@ -104,6 +109,7 @@ function requestService(service_type){
             
                 if(this.responseText == "New record created successfully"){
                     success.innerHTML = this.responseText;
+                    window.location.href = "myRequests.php";
                 }else{
                     err.innerHTML = this.responseText;
                 }
@@ -140,8 +146,9 @@ function signUp() {
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
             
-                if(this.responseText == "Signup Success"){
+                if(this.responseText == "Sign Up Success"){
                     document.getElementById("errorMessage").innerHTML = this.responseText;
+                    window.location.href = "index.php";
                 }else{
                     document.getElementById("errorMessage").innerHTML = this.responseText;
                 }

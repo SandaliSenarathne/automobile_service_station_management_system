@@ -76,6 +76,6 @@ if ($uploadOk == 0) {
   }
 }
 
-header("Location: ../addCategory.php");
+header("Location: ../admin/addCategory.php");
 die();
 ?>

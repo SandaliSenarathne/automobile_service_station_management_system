@@ -1,3 +1,9 @@
+<?php 
+    session_start();
+    require_once("db.php");
+    $sql = "SELECT * FROM `booking`";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +11,7 @@
     <?php include("importStyles.php"); ?>
 </head>
 <body>
+    <?php include("header.php"); ?>
     <div class="container-fluid  py-5 px-5" id="items">
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12">
@@ -24,76 +31,33 @@
                     <th></th>
                     <th></th>
                 </tr>
-                <tr>
-                    <td><img src="images/bg.jpg" width="75px"></td>
-                    <td>Normal Service</td>
-                    <td>NC 8024</td>
-                    <td>Toyota</td>
-                    <td>Toyota Vitz</td>
-                    <td>Lorem ipsum dolor sit quos pariatur excepturi dignissimos veritatis </td>
-                    <td>05.10.2021</td>
-                    <td>14:30</td>
-                    <td>2038-01-19 03:14:07</td>
-                    <td><span class="badge badge-primary">Pending</span></td>
-                    <td><button type="button" class="btn btn-sm btn-outline-primary" onClick="#">Edit</button></td>
-                    <td><button type="button" class="btn btn-sm btn-outline-danger" onClick="#">Delete</button></td>
-                </tr>
-                <tr>
-                    <td><img src="images/bg.jpg" width="75px"></td>
-                    <td>Normal Service</td>
-                    <td>NC 8024</td>
-                    <td>Toyota</td>
-                    <td>Toyota Vitz</td>
-                    <td>Lorem ipsum dolor sit quos pariatur excepturi dignissimos veritatis </td>
-                    <td>05.10.2021</td>
-                    <td>14:30</td>
-                    <td>2038-01-19 03:14:07</td>
-                    <td><span class="badge badge-success">Accepted</span></td>
-                    <td></td>
-                    <td><button type="button" class="btn btn-sm btn-outline-danger" onClick="#">Delete</button></td>
-                </tr>
-                <tr>
-                    <td><img src="images/bg.jpg" width="75px"></td>
-                    <td>Normal Service</td>
-                    <td>NC 8024</td>
-                    <td>Toyota</td>
-                    <td>Toyota Vitz</td>
-                    <td>Lorem ipsum dolor sit quos pariatur excepturi dignissimos veritatis </td>
-                    <td>05.10.2021</td>
-                    <td>14:30</td>
-                    <td>2038-01-19 03:14:07</td>
-                    <td><span class="badge badge-danger">Rejected</span></td>
-                    <td></td>
-                    <td><button type="button" class="btn btn-sm btn-outline-danger" onClick="#">Delete</button></td>
-                </tr>
-                <tr>
-                    <td><img src="images/bg.jpg" width="75px"></td>
-                    <td>Normal Service</td>
-                    <td>NC 8024</td>
-                    <td>Toyota</td>
-                    <td>Toyota Vitz</td>
-                    <td>Lorem ipsum dolor sit quos pariatur excepturi dignissimos veritatis </td>
-                    <td>05.10.2021</td>
-                    <td>14:30</td>
-                    <td>2038-01-19 03:14:07</td>
-                    <td><span class="badge badge-primary">Pending</span></td>
-                    <td><button type="button" class="btn btn-sm btn-outline-primary" onClick="#">Edit</button></td>
-                    <td><button type="button" class="btn btn-sm btn-outline-danger" onClick="#">Delete</button></td>
-                </tr>
-                <tr>
-                    <td><img src="images/bg.jpg" width="75px"></td>
-                    <td>Normal Service</td>
-                    <td>NC 8024</td>
-                    <td>Toyota</td>
-                    <td>Toyota Vitz</td>
-                    <td>Lorem ipsum dolor sit quos pariatur excepturi dignissimos veritatis </td>
-                    <td>05.10.2021</td>
-                    <td>14:30</td>
-                    <td>2038-01-19 03:14:07</td>
-                    <td><span class="badge badge-warning">Completed</span></td>
-                    <td></td>
-                    <td><button type="button" class="btn btn-sm btn-outline-danger" onClick="#">Delete</button></td>
-                </tr>
+                <?php
+                    $result = $conn->query($sql);
+                    if ($result->num_rows > 0) {
+                        // output data of each row
+                        while($row = $result->fetch_assoc()) {
+
+                            ?>
+                            <tr>
+                                <td><img src="images/bg.jpg" width="75px"></td>
+                                <td><?php echo $row['service_type']?></td>
+                                <td><?php echo $row['vehicle_number']?></td>
+                                <td><?php echo($row['vehicle_brand'])?></td>
+                                <td><?php echo($row['vehicle_model'])?></td>
+                                <td><?php echo($row['message'])?></td>
+                                <td><?php echo($row['date'])?></td>
+                                <td><?php echo($row['time'])?></td>
+                                <td><?php echo($row['requested_on'])?></td>
+                                <td><span class="badge badge-primary" onClick="#"><?php echo($row['status'])?></span></td>
+                                <td><button type="button" class="btn btn-sm btn-outline-primary" onClick="#">Edit</button></td>
+                                <td><button type="button" class="btn btn-sm btn-outline-danger" onClick="#">Delete</button></td>
+                            </tr>
+
+                            <?php
+                        }
+                    }
+
+                ?>
             </table>
         </div>
     </div>

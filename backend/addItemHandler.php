@@ -80,6 +80,6 @@ if ($uploadOk == 0) {
   }
 }
 
-header("Location: ../addItem.php");
+header("Location: ../admin/addItem.php");
 die();
 ?>
