@@ -73,14 +73,14 @@
                         ?>
                             <tr>
                                 <td><img src="../images/bg.jpg" width="75px"></td>
-                                <td>Normal Service</td>
-                                <td>NC 8024</td>
-                                <td>Toyota</td>
-                                <td>Toyota Vitz</td>
-                                <td>Lorem ipsum dolor sit quos pariatur excepturi dignissimos veritatis </td>
-                                <td>05.10.2021</td>
-                                <td>14:30</td>
-                                <td>2038-01-19 03:14:07</td>
+                                <td><?php echo $row['service_type']?></td>
+                                <td><?php echo $row['vehicle_number']?></td>
+                                <td><?php echo $row['vehicle_brand']?></td>
+                                <td><?php echo $row['vehicle_model']?></td>
+                                <td><?php echo $row['message']?></td>
+                                <td><?php echo $row['date']?></td>
+                                <td><?php echo $row['time']?></td>
+                                <td><?php echo $row['requested_on']?></td>
                                 <td>
                                     <select class="custom-select" name="status">
                                         <option class="text-primary" value="0">Pending</option>
