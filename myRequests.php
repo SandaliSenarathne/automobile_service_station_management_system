@@ -16,7 +16,7 @@
             <h2 class="fadeInDown text-center">My Service Requests</h1>
             <table class="table" id="itemsInCategory">
                 <tr>
-                    <th>Thumbnail</th>
+                    <th</th>
                     <th>Service Type</th>
                     <th>Vehicle Number</th>
                     <th>Brand</th>
