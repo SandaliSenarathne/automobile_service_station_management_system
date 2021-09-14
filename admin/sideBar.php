@@ -31,5 +31,8 @@
                 <li>
                     <a href="viewCategoriesAndItems.php">View Categories and Items</a>
                 </li>
+                <li>
+                    <a href="serviceRequestsForAdmin.php">Service Requests</a>
+                </li>
             </ul>
         </nav>

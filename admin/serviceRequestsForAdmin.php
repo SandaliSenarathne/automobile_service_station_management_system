@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <title>Service Requests</title>
-    <?php include("importStyles.php"); ?>
+    <?php include("../importStyles.php"); ?>
 </head>
 <body>
     <div class="container-fluid  py-5 px-5" id="items">
@@ -23,7 +23,7 @@
                     <th>Status</th>
                 </tr>
                 <tr>
-                    <td><img src="images/bg.jpg" width="75px"></td>
+                    <td><img src="../images/bg.jpg" width="75px"></td>
                     <td>Normal Service</td>
                     <td>NC 8024</td>
                     <td>Toyota</td>
@@ -46,7 +46,7 @@
     </div>
     </div>
 
-    <?php include("importScripts.php"); ?>
+    <?php include("../importScripts.php"); ?>
 
 </body>
 </html>
