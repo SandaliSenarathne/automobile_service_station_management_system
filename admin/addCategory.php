@@ -1,12 +1,15 @@
-<!DOCTYPE html>
-<html>
+<?php
+session_start();
 
+?>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <title>Add Category</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Dashboard</title>
 
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
@@ -16,10 +19,11 @@
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
-</head>
 
+</head>
 <body>
-    <div class="wrapper">
+
+<div class="wrapper">
         <!-- Require side bar -->
         <?php require_once 'sideBar.php'; ?>
 
@@ -47,7 +51,45 @@
                 </div>
             </nav>
 
-            <h2>Collapsible Sidebar Using Bootstrap 4</h2>
+            <!-- Content here -->
+            <h1>Add Category</h1>
+            <div class="container-fluid" id="addCategory">
+        <div class="row">
+        <div class="col-sm-12 text-center">
+        
+            <div class="card">
+            <div class="card-body">
+                <form class="login-form" action="../backend/addCategoriHandler.php" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="categoryName" id="categoryName" placeholder="Category Name" required>
+                    </div>
+                    <div class="form-group text-left">
+                        <label for="thumbnail">Please upload thumbnail for this category</label>
+                        <input  type="file" class="form-control" name="thumbnail" id="thumbnail" required>
+                    </div>
+                    <p style="color:red;"><?php 
+                        if(isset($_SESSION['err'])){
+                            echo $_SESSION['err'];
+                            unset($_SESSION['err']);
+                        }
+                    
+                    ?></p>
+                    <p style="color:green;"><?php 
+                        if(isset($_SESSION['success'])){
+                            echo $_SESSION['success'];
+                            unset($_SESSION['success']);
+                        }
+                    
+                    ?></p>
+                    <input type="submit" class="btn btn-primary btn-lg" value="Add Category" name="submit">
+                    <!-- <button type="submit"  name="submit" class="btn btn-primary btn-lg">Submit Request</button> -->
+                </form>
+                
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
             
             <div class="line"></div>
 
@@ -68,6 +110,10 @@
             });
         });
     </script>
-</body>
 
+    
+
+    <?php include("../importScripts.php"); ?>
+
+</body>
 </html>
