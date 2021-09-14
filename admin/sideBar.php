@@ -26,10 +26,7 @@
                     <a href="addCategory.php">Add Category</a>
                 </li>
                 <li>
-                    <a href="#">Portfolio</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
+                    <a href="addItem.php">Add Item</a>
                 </li>
             </ul>
         </nav>
