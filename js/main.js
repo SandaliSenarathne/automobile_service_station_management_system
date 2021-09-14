@@ -140,8 +140,9 @@ function signUp() {
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
             
-                if(this.responseText == "Signup Success"){
+                if(this.responseText == "Sign Up Success"){
                     document.getElementById("errorMessage").innerHTML = this.responseText;
+                    window.location.href = "index.php";
                 }else{
                     document.getElementById("errorMessage").innerHTML = this.responseText;
                 }
