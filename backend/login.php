@@ -8,7 +8,7 @@
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
     }
-	$sql = "SELECT COUNT(*), id
+	$sql = "SELECT COUNT(*), id, role 
 			FROM user
 			WHERE email = '$email' AND pwd='$hashedPassword'";
 
@@ -22,7 +22,13 @@
 		$_SESSION['user']['email']= $email;
 		$_SESSION['user']['status']= 1;
 		$_SESSION['user']["login_time_stamp"] = time();
-		echo "Login Success";
+		$_SESSION['user']['role']= $row['role'];
+		if($row['role'] == '1'){
+			echo "Admin";
+		}else{
+			echo "Login Success";
+		}
+		
 	}
     mysqli_close($conn);
 ?>

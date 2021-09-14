@@ -42,7 +42,12 @@ function login() {
                 if(this.responseText == "Login Success"){
                     document.getElementById("errorMessage").innerHTML = this.responseText;
                     window.location.href = "index.php";
-                }else{
+                }
+                else if(this.responseText =='Admin'){
+                    document.getElementById("errorMessage").innerHTML = this.responseText;
+                    window.location.href = "admin/";
+                }
+                else{
                     document.getElementById("errorMessage").innerHTML = this.responseText;
                 }
                 
@@ -104,6 +109,7 @@ function requestService(service_type){
             
                 if(this.responseText == "New record created successfully"){
                     success.innerHTML = this.responseText;
+                    window.location.href = "myRequests.php";
                 }else{
                     err.innerHTML = this.responseText;
                 }
