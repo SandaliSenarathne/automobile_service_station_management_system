@@ -28,5 +28,8 @@
                 <li>
                     <a href="addItem.php">Add Item</a>
                 </li>
+                <li>
+                    <a href="viewCategoriesAndItems.php">View Categories and Items</a>
+                </li>
             </ul>
         </nav>
