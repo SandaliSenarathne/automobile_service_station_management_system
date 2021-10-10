@@ -1,7 +1,7 @@
 <?php
     include("../db.php");
     $sql = "SELECT * FROM category";
-
+    session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -51,6 +51,13 @@
                     </div>
                 </div>
             </nav>
+            <p style="text-align: center;color:red">
+            <?php
+                if(isset($_SESSION['err'])){
+                    echo $_SESSION['err'];
+                    unset($_SESSION['err']);
+                }
+            ?></p>
             <div class="container-fluid  py-5 px-5" id="items">
     <div class="row">
         <div class="col-lg-4 col-md-4 col-sm-12">
@@ -65,7 +72,7 @@
                             <td><img src="../images/bg.jpg" width="75px"></td>
                             <td><?php echo($row['name']) ?></td>
                             <td><button type="button" class="btn btn-sm btn-outline-primary" onClick="#">Edit</button></td>
-                            <td><a href="../backend/DeleteCategory.php?id=1"><button type="button" class="btn btn-sm btn-outline-danger" onClick="#">Delete</button></a></td>
+                            <td><a href="../backend/DeleteCategory.php?id=<?php echo($row['id']) ?>"><button type="button" class="btn btn-sm btn-outline-danger" onClick="#">Delete</button></a></td>
                             <td><button type="button" class="btn btn-sm btn-outline-success" onClick="ViewItems(<?php echo($row['id']) ?>)">View</button></td>
                         </tr>
                     
