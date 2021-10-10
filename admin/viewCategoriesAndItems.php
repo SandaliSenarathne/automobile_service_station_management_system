@@ -1,3 +1,8 @@
+<?php
+    include("../db.php");
+    $sql = "SELECT * FROM category";
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -51,42 +56,28 @@
         <div class="col-lg-4 col-md-4 col-sm-12">
             <h2 class="fadeInDown text-center">Categories</h1>
             <table class="table table-secondary">
-                <tr>
-                    <td><img src="../images/bg.jpg" width="75px"></td>
-                    <td>Wheels</td>
-                    <td><button type="button" class="btn btn-sm btn-outline-primary" onClick="#">Edit</button></td>
-                    <td><a href="../backend/DeleteCategory.php?id=1"><button type="button" class="btn btn-sm btn-outline-danger" onClick="#">Delete</button></a></td>
-                    <td><button type="button" class="btn btn-sm btn-outline-success" onClick="#">View</button></td>
-                </tr>
+                <?php
+
+                    $result = mysqli_query($conn, $sql);
+                    while($row = mysqli_fetch_assoc($result)){
+                        ?>
+                        <tr>
+                            <td><img src="../images/bg.jpg" width="75px"></td>
+                            <td>Wheels</td>
+                            <td><button type="button" class="btn btn-sm btn-outline-primary" onClick="#">Edit</button></td>
+                            <td><a href="../backend/DeleteCategory.php?id=1"><button type="button" class="btn btn-sm btn-outline-danger" onClick="#">Delete</button></a></td>
+                            <td><button type="button" class="btn btn-sm btn-outline-success" onClick="ViewItems(1)">View</button></td>
+                        </tr>
+                    
+                        <?php
+                    }
+                ?>
+                
                 
             </table>
         </div>
-        <div class="col-lg-8 col-md-8 col-sm-12">
-            <h2 class="fadeInDown text-center">Items</h1>
-            <table class="table" id="itemsInCategory">
-                <tr>
-                    <th>Thumbnail</th>
-                    <th>Item Name</th>
-                    <th>Description</th>
-                    <th>Unit Price</th>
-                    <th>Available Stock</th>
-                    <th></th>
-                    <th></th>
-                </tr>
-                <tr>
-                    <td><img src="../images/bg.jpg" width="75px"></td>
-                    <td>Wheel set</td>
-                    <td>Lorem ipsum dolor sit quos pariatur excepturi dignissimos veritatis </td>
-                    <td>7500 LKR</td>
-                    <td>3</td>
-                    <td><button type="button" class="btn btn-sm btn-outline-primary" onClick="#">Edit</button></td>
-                    <td><button type="button" class="btn btn-sm btn-outline-danger" onClick="#">Delete</button></td>
-                </tr>
-                
-                
-                
-                
-            </table>
+        <div class="col-lg-8 col-md-8 col-sm-12" id="stage">
+           <h1 class="fadeInDown text-center">Select a Item</h1>
         </div>
     </div>
     </div>
@@ -109,5 +100,20 @@
                 $('#sidebar').toggleClass('active');
             });
         });
+
+
+        function ViewItems(id) {
+            //ajax request for update Status
+            var stage = document.getElementById("stage");
+           var xmlHttpRequest = new XMLHttpRequest();
+              xmlHttpRequest.open("GET", "../backend/ViewItem.php?id="+id, true);
+                xmlHttpRequest.send();
+                xmlHttpRequest.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        stage.innerHTML = this.responseText;
+                    }
+                }
+        
+        }
     </script>
 </body>
