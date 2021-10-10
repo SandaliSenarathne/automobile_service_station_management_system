@@ -83,7 +83,7 @@
                                 <td><?php echo $row['time']?></td>
                                 <td><?php echo $row['requested_on']?></td>
                                 <td>
-                                    <select class="custom-select" name="status">
+                                    <select class="custom-select" name="status" onChange="changeStatus(this.value,<?php echo($row['id']) ?>)">
                                         <?php
                                            echo( getStatus($row['status']));
                                         ?>
@@ -118,6 +118,19 @@
                 $('#sidebar').toggleClass('active');
             });
         });
+
+        function changeStatus(status,id) {
+            //ajax request for update Status
+           var xmlHttpRequest = new XMLHttpRequest();
+              xmlHttpRequest.open("GET", "../backend/changeServiceStatus.php?status="+status+"&id="+id, true);
+                xmlHttpRequest.send();
+                xmlHttpRequest.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        alert(this.responseText);
+                    }
+                }
+        
+        }
     </script>
 </body>
 
