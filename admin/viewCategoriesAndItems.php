@@ -55,7 +55,7 @@
                     <td><img src="../images/bg.jpg" width="75px"></td>
                     <td>Wheels</td>
                     <td><button type="button" class="btn btn-sm btn-outline-primary" onClick="#">Edit</button></td>
-                    <td><button type="button" class="btn btn-sm btn-outline-danger" onClick="#">Delete</button></td>
+                    <td><a href="../backend/DeleteCategory.php?id=1"><button type="button" class="btn btn-sm btn-outline-danger" onClick="#">Delete</button></a></td>
                     <td><button type="button" class="btn btn-sm btn-outline-success" onClick="#">View</button></td>
                 </tr>
                 
