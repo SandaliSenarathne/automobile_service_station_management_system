@@ -1,5 +1,6 @@
 <?php
     require_once("../db.php");
+    require_once('../backend/mainFunctions.php');
     $sql = "SELECT * FROM booking;";
 ?>
 <!DOCTYPE html>
@@ -83,10 +84,9 @@
                                 <td><?php echo $row['requested_on']?></td>
                                 <td>
                                     <select class="custom-select" name="status">
-                                        <option class="text-primary" value="0">Pending</option>
-                                        <option class="text-success" value="1">Accepted</option>
-                                        <option class="text-danger" value="2">Rejected</option>
-                                        <option class="text-warning" value="3">Completed</option>
+                                        <?php
+                                           echo( getStatus($row['status']));
+                                        ?>
                                     </select>
                                 </td>
                             </tr>
