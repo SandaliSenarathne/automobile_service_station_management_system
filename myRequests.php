@@ -1,6 +1,7 @@
 <?php 
     session_start();
     require_once("db.php");
+    require_once("backend/mainFunctions.php");
     $id = $_SESSION['user']['user_id'];
     $sql = "SELECT * FROM `booking` WHERE customer_id = '$id';";
 ?>
@@ -49,7 +50,7 @@
                                 <td><?php echo($row['date'])?></td>
                                 <td><?php echo($row['time'])?></td>
                                 <td><?php echo($row['requested_on'])?></td>
-                                <td><span class="badge badge-primary" onClick="#"><?php echo($row['status'])?></span></td>
+                                <td><?php echo(getStatusCustomer($row['status'])); ?></td>
                                 <td><button type="button" class="btn btn-sm btn-outline-primary" onClick="#">Edit</button></td>
                                 <td><button type="button" class="btn btn-sm btn-outline-danger" onClick="#">Delete</button></td>
                             </tr>

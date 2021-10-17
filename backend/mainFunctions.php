@@ -40,4 +40,35 @@
         }
     }
 
+    function getStatusCustomer($status){
+        if($status == 0){
+            return(
+                '
+                <span class="badge badge-info" onClick="#">Pending</span>
+                    
+                '
+            ) ;
+        }else if($status == 1){
+            return(
+                '
+                     <span class="badge badge-primary" onClick="#">Accepted</span>
+                '
+            ) ;
+            
+        }else if($status == 2){
+            return(
+                '
+                <span class="badge badge-danger" onClick="#">Rejected</span>
+                    
+                '
+            ) ;
+        }else{
+            return(
+                '
+                <span class="badge badge-success" onClick="#">Completed</span>
+                '
+            ) ;
+        }
+    }
+
 ?>
