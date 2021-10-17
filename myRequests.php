@@ -1,7 +1,8 @@
 <?php 
     session_start();
     require_once("db.php");
-    $sql = "SELECT * FROM `booking`";
+    $id = $_SESSION['user']['user_id'];
+    $sql = "SELECT * FROM `booking` WHERE customer_id = '$id';";
 ?>
 
 <!DOCTYPE html>
