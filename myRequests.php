@@ -51,7 +51,7 @@
                                 <td><?php echo($row['time'])?></td>
                                 <td><?php echo($row['requested_on'])?></td>
                                 <td><?php echo(getStatusCustomer($row['status'])); ?></td>
-                                <td><button type="button" class="btn btn-sm btn-outline-primary" onClick="#">Edit</button></td>
+                                <td><a href="editRequestService.php?id=<?php echo($row['id']);?>"><button type="button" class="btn btn-sm btn-outline-primary" >Edit</button></a></td>
                                 <td><a href="backend/DeleteMyReqest.php?id=<?php echo($row['id']);?>"><button type="button" class="btn btn-sm btn-outline-danger" onClick="#">Delete</button></a></td>
                             </tr>
 
