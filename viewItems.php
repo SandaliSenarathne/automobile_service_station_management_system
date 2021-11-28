@@ -12,6 +12,8 @@
     <?php include("importStyles.php"); ?>
 </head>
 <body>
+    <?php include("header.php"); ?>
+    <br>
     <div class="container-fluid py-5 px-5" id="items">
     <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12">
