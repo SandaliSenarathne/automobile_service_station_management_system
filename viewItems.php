@@ -2,8 +2,7 @@
     session_start();
     require_once("db.php");
     $category = $_GET['category'];
-    $sql = "SELECT * FROM item WHERE category_id=$category AND stock>0;";
-    $result = $conn->query($sql);
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,12 +16,19 @@
     <div class="container-fluid py-5 px-5" id="items">
     <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12">
-            <h2 class="fadeInDown text-center">Items</h1>
-            <table class="table">
-                <?php
+            <a href="viewcategories.php"><Button class="btn btn-primary">Select a Category</Button></a>
+        <?php
+                if(isset($_GET['category'])){
+                   
+               
+                $sql = "SELECT * FROM item WHERE category_id=$category AND stock>0;";
+                $result = $conn->query($sql);
                 if($result->num_rows > 0){
                     while($row = $result->fetch_assoc()){
                 ?>
+            <h2 class="fadeInDown text-center">Items</h1>
+            <table class="table">
+               
                 <tr>
                     <td><img src="<?php echo($row['thumbnail']) ?>" width="75px"></td>
                     <td><?php echo($row['name']) ?></td>
@@ -32,13 +38,14 @@
                 </tr>
                 <?php
                     }
+                
                 }else{
                 ?>
                     <tr>
                         <td><h2 class="text-center">No Items found in this category.</h2></td>
                     </tr>
                 <?php
-                }
+                }}
                 ?>
             </table>
         </div>

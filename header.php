@@ -10,7 +10,9 @@
                 <a class="nav-item nav-link" href="index.php#home">Home</a>
                 <a class="nav-item nav-link" href="index.php#about">About Us</a>
                 <a class="nav-item nav-link" href="index.php#services">Services</a>
+                <a class="nav-item nav-link" href="viewItems.php">Cart</a>
                 <a class="nav-item nav-link mr-5" href="index.php#contact">Contact Us</a>
+                
                 <?php
                     //hide login and signup if logged in
                     if(!isset($_SESSION['user']['email'])){
