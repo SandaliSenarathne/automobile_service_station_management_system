@@ -68,28 +68,31 @@
         <div class="col-lg-6 col-md-6 col-sm-12">
             <h2 class="fadeInDown text-center">My Cart</h1>
             <table class="table">
-                <tr><td><h2 class="text-center">Under Construction</h2></td></tr>
-                <!-- <tr>
-                    <td><img src="images/bg.jpg" width="75px"></td>
-                    <td>Wheel set</td>
-                    <td>Lorem ipsum dolor sit quos pariatur excepturi dignissimos veritatis </td>
-                    <td>7500 LKR</td>
-                    <td><button type="button" class="btn btn-outline-danger" onClick="#">Remove from cart</button></td>
-                </tr>
-                <tr>
-                    <td><img src="images/bg.jpg" width="75px"></td>
-                    <td>Wheel set</td>
-                    <td>Lorem ipsum dolor sit quos pariatur excepturi dignissimos veritatis </td>
-                    <td>7500 LKR</td>
-                    <td><button type="button" class="btn btn-outline-danger" onClick="#">Remove from cart</button></td>
-                </tr>
-                <tr>
-                    <td><img src="images/bg.jpg" width="75px"></td>
-                    <td>Wheel set</td>
-                    <td>Lorem ipsum dolor sit quos pariatur excepturi dignissimos veritatis </td>
-                    <td>7500 LKR</td>
-                    <td><button type="button" class="btn btn-outline-danger" onClick="#">Remove from cart</button></td>
-                </tr> -->
+                <!-- select all items from cart items -->
+                <?php
+                    $sqlCartItems = "SELECT * FROM `cart_item` WHERE `cart_id` = $rowActiveCart[id]";
+                    $resultCartItems = $conn->query($sqlCartItems);
+                    if($resultCartItems->num_rows > 0){
+                        while($rowCartItems = $resultCartItems->fetch_assoc()){
+
+                            //get item data from item table
+                            $sqlItem = "SELECT * FROM `item` WHERE `id` = $rowCartItems[item_id]";
+                            $resultItem = $conn->query($sqlItem);
+                            $rowItem = $resultItem->fetch_assoc();
+
+                        ?>
+                             <tr>
+                                <td><img src="<?php echo($rowItem['thumbnail']) ?>" width="75px"></td>
+                                <td><?php echo($rowItem['name']); ?></td>
+                                <td><?php echo($rowItem['description']); ?></td>
+                                <td><?php echo($rowItem['price']); ?></td>
+                                <td><button type="button" class="btn btn-outline-danger" onClick="#">Remove from cart</button></td>
+                            </tr>
+                        <?php
+                        }
+                    }
+
+                ?>
             </table>
         </div>
     </div>
