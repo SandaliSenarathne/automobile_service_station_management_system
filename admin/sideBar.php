@@ -34,5 +34,8 @@
                 <li>
                     <a href="serviceRequestsForAdmin.php">Service Requests</a>
                 </li>
+                <li>
+                    <a href="reports.php">Reports</a>
+                </li>
             </ul>
         </nav>
