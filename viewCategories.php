@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require_once("db.php");
     $sql = "SELECT * FROM category";
     $result = $conn->query($sql);
@@ -10,7 +11,9 @@
     <?php include("importStyles.php"); ?>
 </head>
 <body>
-      
+    <?php include("header.php"); ?>
+    <div class="container-fluid  py-5 px-5" id="items">
+    <br>
     <h2 class="fadeInDown text-center" style="margin-bottom:25px;margin-top:25px">PRODUCT CATEGORIES</h1>
     <div class="row" style="margin:20px">
         <?php
@@ -30,6 +33,7 @@
                 }
             }
         ?>
+    </div>
     </div>
     <?php include("importScripts.php"); ?>
 </body>

@@ -109,11 +109,11 @@ function requestService(service_type){
             
                 if(this.responseText == "New record created successfully"){
                     success.innerHTML = this.responseText;
-                    
                     if(service_type == 4){
                         window.location.href = "viewCategories.php";
+                    }else{
+                        window.location.href = "myRequests.php";
                     }
-                    window.location.href = "myRequests.php";
                 }else{
                     err.innerHTML = this.responseText;
                 }
