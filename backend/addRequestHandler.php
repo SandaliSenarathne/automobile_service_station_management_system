@@ -34,6 +34,14 @@
       '$rtime', 
       current_timestamp(), '0');";
     if ($conn->query($sql) === TRUE) {
+        //create new empty cart row in DB
+        $last_id = $conn->insert_id;
+        $sql = "INSERT INTO `cart` (`id`, `date`, `time`, `status`, `booking_id`, `customer_id`) VALUES (NULL, curdate(), curtime(), '0', ' $last_id ', '$user_id');";
+        if ($conn->query($sql) === TRUE) {
+            // echo "New record created successfully";
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
         echo "New record created successfully";
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;

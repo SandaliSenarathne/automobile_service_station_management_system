@@ -2,7 +2,11 @@
     session_start();
     require_once("db.php");
     $category = $_GET['category'];
-    
+    if(!isset($_SESSION['user']['email'])){
+        $_SESSION['err'] = "Please login to request a Service";
+        header('location: login.php');
+        
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,10 +18,22 @@
     <?php include("header.php"); ?>
     <br>
     <div class="container-fluid py-5 px-5" id="items">
+    <!-- check for active cart -->
+    <?php
+        $sqlActiveCart = "SELECT * FROM `cart` WHERE `customer_id` = 1 and `status` = 0";
+        $resultActiveCart = $conn->query($sqlActiveCart);
+        if($resultActiveCart->num_rows !=  1){
+            echo('<h2>Please create a new service request</h2>');
+            echo('<a href="requestService.php?id=4" class="btn btn-primary">Create New Request</a>');
+        }else{
+
+        
+
+    ?>
     <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12">
             <a href="viewcategories.php"><Button class="btn btn-primary">Select a Category</Button></a>
-        <?php
+            <?php
                 if(isset($_GET['category'])){
                    
                
@@ -77,6 +93,9 @@
             </table>
         </div>
     </div>
+    <?php
+        }
+    ?>
     </div>
 
     <?php include("importScripts.php"); ?>

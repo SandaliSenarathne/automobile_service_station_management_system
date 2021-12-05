@@ -10,7 +10,6 @@
                 <a class="nav-item nav-link" href="index.php#home">Home</a>
                 <a class="nav-item nav-link" href="index.php#about">About Us</a>
                 <a class="nav-item nav-link" href="index.php#services">Services</a>
-                <a class="nav-item nav-link" href="viewItems.php">Cart</a>
                 <a class="nav-item nav-link mr-5" href="index.php#contact">Contact Us</a>
                 
                 <?php
@@ -22,6 +21,7 @@
                         <?php
                     }else{
                         ?>
+                        <a class="nav-item nav-link" href="viewItems.php">Cart</a>
                         <a class="nav-item nav-link" href="myRequests.php">My Requests</a>
                         <a class="nav-item nav-link" href="logout.php">Logout</a>
                         <?php
