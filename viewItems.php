@@ -86,7 +86,7 @@
                                 <td><?php echo($rowItem['name']); ?></td>
                                 <td><?php echo($rowItem['description']); ?></td>
                                 <td><?php echo($rowItem['price']); ?></td>
-                                <td><button type="button" class="btn btn-outline-danger" onClick="#">Remove from cart</button></td>
+                                <td><a href="backend/removeAItemFromCart.php?id=<?php echo($rowCartItems['id']) ?>"><button type="button" class="btn btn-outline-danger" onClick="#">Remove from cart</button></a></td>
                             </tr>
                         <?php
                         }
@@ -94,6 +94,8 @@
 
                 ?>
             </table>
+            <!-- check cart is is empty  -->
+            <a href="backend/finishCart.php?id=<?php echo($rowActiveCart['id'])?>"><Button class="btn btn-primary btn-block">Finish</Button></a>
         </div>
     </div>
     <?php
