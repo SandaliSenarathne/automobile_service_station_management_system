@@ -26,7 +26,7 @@
             echo('<h2>Please create a new service request</h2>');
             echo('<a href="requestService.php?id=4" class="btn btn-primary">Create New Request</a>');
         }else{
-
+            $rowActiveCart = $resultActiveCart->fetch_assoc()
         
 
     ?>
@@ -50,7 +50,7 @@
                     <td><?php echo($row['name']) ?></td>
                     <td><?php echo($row['description']) ?></td>
                     <td><?php echo($row['price']) ?></td>
-                    <td><button type="button" class="btn btn-outline-success" onClick="#">Add to cart</button></td>
+                    <td><a href="backend/addToCart.php?item_id=<?php echo($row['id']) ?>&cart_id=<?php echo($rowActiveCart['id']); ?>"><button type="button" class="btn btn-outline-success" onClick="#">Add to cart</button></a></td>
                 </tr>
                 <?php
                     }
