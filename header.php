@@ -21,6 +21,7 @@
                         <?php
                     }else{
                         ?>
+                        <a class="nav-item nav-link" href="search.php">Search</a>
                         <a class="nav-item nav-link" href="viewItems.php">Cart</a>
                         <a class="nav-item nav-link" href="myRequests.php">My Requests</a>
                         <a class="nav-item nav-link" href="logout.php">Logout</a>
