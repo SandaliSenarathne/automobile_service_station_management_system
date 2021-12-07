@@ -69,7 +69,7 @@
                     while($row = mysqli_fetch_assoc($result)){
                         ?>
                         <tr>
-                            <td><img src="../images/bg.jpg" width="75px"></td>
+                            <td><img src="../<?php echo($row['thumbnail']) ?>" width="75px"></td>
                             <td><?php echo($row['name']) ?></td>
                             <td><button type="button" class="btn btn-sm btn-outline-primary" onClick="#">Edit</button></td>
                             <td><a href="../backend/DeleteCategory.php?id=<?php echo($row['id']) ?>"><button type="button" class="btn btn-sm btn-outline-danger" onClick="#">Delete</button></a></td>

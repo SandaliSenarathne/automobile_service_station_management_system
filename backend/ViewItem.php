@@ -21,13 +21,13 @@
 
                         ?>
                         <tr>
-                    <td><img src="../images/bg.jpg" width="75px"></td>
+                    <td><img src="../<?php echo($row['thumbnail']) ?>" width="75px"></td>
                     <td><?php echo($row['name']) ?></td>
                     <td><?php echo($row['description']) ?></td>
                     <td><?php echo($row['price']) ?></td>
                     <td><?php echo($row['stock'])?></td>
                     <td><button type="button" class="btn btn-sm btn-outline-primary" onClick="#">Edit</button></td>
-                    <td><button type="button" class="btn btn-sm btn-outline-danger" onClick="#">Delete</button></td>
+                    <td><a href="../backend/DeleteItem.php?id=<?php echo($row['id']) ?>"><button type="button" class="btn btn-sm btn-outline-danger">Delete</button></a></td>
                 </tr>
 
                         <?php
