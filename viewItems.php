@@ -2,6 +2,7 @@
     session_start();
     require_once("db.php");
     $category = $_GET['category'];
+    $id = $_SESSION['user']['user_id'];
     if(!isset($_SESSION['user']['email'])){
         $_SESSION['err'] = "Please login to request a Service";
         header('location: login.php');
@@ -20,7 +21,7 @@
     <div class="container-fluid py-5 px-5" id="items">
     <!-- check for active cart -->
     <?php
-        $sqlActiveCart = "SELECT * FROM `cart` WHERE `customer_id` = 1 and `status` = 0";
+        $sqlActiveCart = "SELECT * FROM `cart` WHERE `customer_id` = $id and `status` = 0";
         $resultActiveCart = $conn->query($sqlActiveCart);
         if($resultActiveCart->num_rows !=  1){
             echo('<h2>Please create a new service request</h2>');
