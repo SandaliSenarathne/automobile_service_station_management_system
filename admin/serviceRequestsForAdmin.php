@@ -73,8 +73,39 @@
                     while($row = mysqli_fetch_assoc($result)){
                         ?>
                             <tr>
-                                <td><img src="../images/bg.jpg" width="75px"></td>
-                                <td><?php echo $row['service_type']?></td>
+                                <td>
+                                    <?php 
+                                        if($row['service_type'] == 1){
+                                            echo('<img src="../images/normal_service.jpg" width="75px">');
+                                        }else if($row['service_type'] == 2){
+                                            echo('<img src="../images/repair_service.jpg" width="75px">');
+                                        }else if($row['service_type'] == 3){
+                                            echo('<img src="../images/breakdown_service.jpg" width="75px">');
+                                        }else{
+                                            
+                                            ?>
+                                            <img src="../images/modification_service.jpg" width="75px">
+                                            
+                                            <?php
+                                        }
+                                        ?>
+                                </td>
+                                <td>
+                                        <?php 
+                                        if($row['service_type'] == 1){
+                                            echo("Normal Service");
+                                        }else if($row['service_type'] == 2){
+                                            echo("Repair Service");
+                                        }else if($row['service_type'] == 3){
+                                            echo("Breakdown Service");
+                                        }else{
+                                            echo("Modification Service");
+                                            ?>
+                                                <a href="view-modification-history.php?id=<?php echo($row['id']) ?>"><span class="badge badge-info">10</span></a>
+                                            <?php
+                                        }
+                                        ?>
+                                </td>
                                 <td><?php echo $row['vehicle_number']?></td>
                                 <td><?php echo $row['vehicle_brand']?></td>
                                 <td><?php echo $row['vehicle_model']?></td>
