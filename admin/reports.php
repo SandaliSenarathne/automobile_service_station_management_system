@@ -1,3 +1,25 @@
+<?php
+    require_once("../db.php");
+    require_once('../backend/mainFunctions.php');
+    $sql = "SELECT * FROM booking;";
+    if(isset($_GET['search'])){
+        $search = $_GET['search'];
+        if($search == "today"){
+            $sql = "SELECT * FROM booking WHERE date = CURDATE();";
+        }
+        if($search == "week"){
+            $sql = "SELECT * FROM booking WHERE date >= CURDATE() - INTERVAL 7 DAY;";
+        }
+        if($search == "month"){
+            $sql = "SELECT * FROM booking WHERE date >= CURDATE() - INTERVAL 30 DAY;";
+        }
+        if($search == "year"){
+            $sql = "SELECT * FROM booking WHERE date >= CURDATE() - INTERVAL 365 DAY;";
+        }
+    }
+    
+    
+?>
 <!DOCTYPE html>
 <html>
 
@@ -49,7 +71,84 @@
 
             
             <div class="line"></div>
-
+                <!-- Show reports -->
+                <!-- Reports filter buttons -->
+                <a href="reports.php?search=today"><button type="button" class="btn btn-primary">Today</button>
+                <a href="reports.php?search=week"><button type="button" class="btn btn-primary">Week</button>
+                <a href="reports.php?search=month"><button type="button" class="btn btn-primary">Month</button>
+                <a href="reports.php?search=year"><button type="button" class="btn btn-primary">Year</button>
+                <table class="table" id="itemsInCategory">
+                <tr>
+                    <th></th>
+                    <th>Service Type</th>
+                    <th>Vehicle Number</th>
+                    <th>Brand</th>
+                    <th>Model</th>
+                    <th>Message</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Requested On</th>
+                    <th>Status</th>
+                </tr>
+                <?php
+                    $result = mysqli_query($conn, $sql);
+                    while($row = mysqli_fetch_assoc($result)){
+                        ?>
+                            <tr>
+                                <td>
+                                    <?php 
+                                        if($row['service_type'] == 1){
+                                            echo('<img src="../images/normal_service.jpg" width="75px">');
+                                        }else if($row['service_type'] == 2){
+                                            echo('<img src="../images/repair_service.jpg" width="75px">');
+                                        }else if($row['service_type'] == 3){
+                                            echo('<img src="../images/breakdown_service.jpg" width="75px">');
+                                        }else{
+                                            
+                                            ?>
+                                            <img src="../images/modification_service.jpg" width="75px">
+                                            
+                                            <?php
+                                        }
+                                        ?>
+                                </td>
+                                <td>
+                                        <?php 
+                                        if($row['service_type'] == 1){
+                                            echo("Normal Service");
+                                        }else if($row['service_type'] == 2){
+                                            echo("Repair Service");
+                                        }else if($row['service_type'] == 3){
+                                            echo("Breakdown Service");
+                                        }else{
+                                            echo("Modification Service");
+                                            ?>
+                                                <a href="view-modification-history.php?id=<?php echo($row['id']) ?>"><span class="badge badge-info">10</span></a>
+                                            <?php
+                                        }
+                                        ?>
+                                </td>
+                                <td><?php echo $row['vehicle_number']?></td>
+                                <td><?php echo $row['vehicle_brand']?></td>
+                                <td><?php echo $row['vehicle_model']?></td>
+                                <td><?php echo $row['message']?></td>
+                                <td><?php echo $row['date']?></td>
+                                <td><?php echo $row['time']?></td>
+                                <td><?php echo $row['requested_on']?></td>
+                                <td>
+                                    <select class="custom-select" name="status" onChange="changeStatus(this.value,<?php echo($row['id']) ?>)">
+                                        <?php
+                                           echo( getStatus($row['status']));
+                                        ?>
+                                    </select>
+                                </td>
+                            </tr>
+                        <?php
+                    }
+                    $conn->close();
+                ?>
+                
+            </table>
             </div>
     </div>
 
