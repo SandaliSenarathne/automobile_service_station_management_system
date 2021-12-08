@@ -2,19 +2,28 @@
     require_once("../db.php");
     require_once('../backend/mainFunctions.php');
     $sql = "SELECT * FROM booking;";
+    $pdfBtn = '<a  href="report-pdf.php"><button type="button" class="btn btn-primary" >Download as PDF</button></a>';
     if(isset($_GET['search'])){
         $search = $_GET['search'];
         if($search == "today"){
             $sql = "SELECT * FROM booking WHERE date = CURDATE();";
+            $pdfBtn = '<a  href="report-pdf.php?search=today"><button type="button" class="btn btn-primary" >Download as PDF</button></a>';
+    
         }
         if($search == "week"){
             $sql = "SELECT * FROM booking WHERE date >= CURDATE() - INTERVAL 7 DAY;";
+            $pdfBtn = '<a  href="report-pdf.php?search=week"><button type="button" class="btn btn-primary" >Download as PDF</button></a>';
+    
         }
         if($search == "month"){
             $sql = "SELECT * FROM booking WHERE date >= CURDATE() - INTERVAL 30 DAY;";
+            $pdfBtn = '<a  href="report-pdf.php?search=month"><button type="button" class="btn btn-primary" >Download as PDF</button></a>';
+    
         }
         if($search == "year"){
             $sql = "SELECT * FROM booking WHERE date >= CURDATE() - INTERVAL 365 DAY;";
+            $pdfBtn = '<a  href="report-pdf.php?search=year"><button type="button" class="btn btn-primary" >Download as PDF</button></a>';
+    
         }
     }
     
@@ -73,10 +82,11 @@
             <div class="line"></div>
                 <!-- Show reports -->
                 <!-- Reports filter buttons -->
-                <a href="reports.php?search=today"><button type="button" class="btn btn-primary">Today</button>
-                <a href="reports.php?search=week"><button type="button" class="btn btn-primary">Week</button>
-                <a href="reports.php?search=month"><button type="button" class="btn btn-primary">Month</button>
-                <a href="reports.php?search=year"><button type="button" class="btn btn-primary">Year</button>
+                <a href="reports.php?search=today"><button type="button" class="btn btn-primary">Today</button></a>
+                <a href="reports.php?search=week"><button type="button" class="btn btn-primary">Week</button></a>
+                <a href="reports.php?search=month"><button type="button" class="btn btn-primary">Month</button></a>
+                <a href="reports.php?search=year"><button type="button" class="btn btn-primary">Year</button></a>
+                <?php echo $pdfBtn; ?>
                 <table class="table" id="itemsInCategory">
                 <tr>
                     <th></th>

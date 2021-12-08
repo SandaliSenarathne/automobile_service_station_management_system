@@ -59,6 +59,7 @@
                         if($result->num_rows > 0){
                             ?>
                                 <h1>Results for <?php echo $vehicle_id ?></h1>
+                                <a href="my-services.php?vehicle_id=<?php echo($vehicle_id) ?>"><button class="btn btn-primary">Download as PDF</button></a> 
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
