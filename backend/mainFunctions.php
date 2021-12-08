@@ -70,5 +70,24 @@
             ) ;
         }
     }
-
+    function getStatusCustomerForPDF($status){
+        if($status == 0){
+            return(
+                'Pending'
+            ) ;
+        }else if($status == 1){
+            return(
+                'Accepted'
+            ) ;
+            
+        }else if($status == 2){
+            return(
+                'Rejected'
+            ) ;
+        }else{
+            return(
+                'Completed'
+            ) ;
+        }
+    }
 ?>
