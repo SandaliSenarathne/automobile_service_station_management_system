@@ -43,23 +43,56 @@
         <div class="col-sm-12  text-center">
         
             <div class="card">
+                <br>
+                <br>
+           
+
                 <div class="card-body">
+
                     <h1>Modification Service History</h1>
                     <?php
                         $sqlBooking = "SELECT * FROM booking WHERE id = $booking_id ";
                         $resultBooking = $conn->query($sqlBooking);
                         $rowBooking = $resultBooking->fetch_assoc();
                     ?>
-                    <h3>Vehicle Number - <?php echo($rowBooking['vehicle_number']) ?></h3>
-                    <h3>Vehicle Brand - <?php echo($rowBooking['vehicle_brand']) ?></h3>
-                    <h3>Vehicle Model - <?php echo($rowBooking['vehicle_model']) ?></h3>
-                    <h3>Message - <?php echo($rowBooking['message']) ?></h3>
-                    <h3>Date - <?php echo($rowBooking['date']) ?></h3>
-                    <h3>Time - <?php echo($rowBooking['time']) ?></h3>
-                    <h3>Requested On - <?php echo($rowBooking['requested_on']) ?></h3>
-                    <h3>Status - <?php echo($rowBooking['status']) ?></h3>
-
-                    <!-- Items -->
+                     <table class="table">
+  
+  <tbody>
+    <tr>
+      <th scope="row">Vehicle Number</th>
+      <td><?php echo($rowBooking['vehicle_number']) ?></td>
+    </tr>
+    <tr>
+      <th scope="row">Vehicle Brand</th>
+      <td><?php echo($rowBooking['vehicle_brand']) ?></td>
+    </tr>
+    <tr>
+      <th scope="row">Vehicle Model</th>
+      <td><?php echo($rowBooking['vehicle_model']) ?></td>
+    </tr>
+    <tr>
+      <th scope="row">Message</th>
+      <td><?php echo($rowBooking['message']) ?></td>
+    </tr>
+    <tr>
+      <th scope="row">Date</th>
+      <td><?php echo($rowBooking['date']) ?></td>
+    </tr>
+    <tr>
+      <th scope="row">Time</th>
+      <td><?php echo($rowBooking['time']) ?></td>
+    </tr>
+    <tr>
+      <th scope="row">Requested On</th>
+      <td><?php echo($rowBooking['requested_on']) ?></td>
+    </tr>
+    <tr>
+      <th scope="row">Status</th>
+      <td><?php echo($rowBooking['status']) ?></td>
+    </tr>
+  </tbody>
+</table>
+                                       <!-- Items -->
                     <h1>Items</h1>
                     <table class="table">
                 <!-- select all items from cart items -->
